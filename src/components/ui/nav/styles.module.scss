@@ -10,10 +10,8 @@
 	}
 
 	.searchBox {
-		flex: 1;
-		max-width: 150px;
+		width: 150px;
 		position: relative;
-		background-color: red;
 
 		> label {
 			width: 14px;

@@ -4,6 +4,7 @@ import Input from "../input";
 import { Bell } from "../../../assets/svg";
 import ProfileImage from "../../../assets/images/profile_image.png";
 import SearchIcon from "../../../assets/icons/search.png";
+import Button from "../button";
 
 export default function Nav({ ...props }) {
 	return (
@@ -28,10 +29,10 @@ export default function Nav({ ...props }) {
 					<a href="/">FAQ</a>
 				</li>
 				<li>
-					<button className={styles.notificationBtn}>
+					<Button buttonClass={styles.notificationBtn}>
 						<Bell />
 						<span>8</span>
-					</button>
+					</Button>
 				</li>
 				<li>
 					<div className={styles.profile}>
