@@ -1,0 +1,123 @@
+.chartBox {
+	width: 63%;
+	background: var(--white);
+	border: 1px solid var(--cardBorder);
+	border-radius: 2px;
+
+	@media screen and (max-width: 1200px) {
+		width: var(--full);
+	}
+
+	.chartHeader {
+		height: 4rem;
+		padding: 1rem 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@media screen and (max-width: 600px) {
+			flex-direction: column;
+			margin-bottom: 1rem;
+		}
+
+		.date {
+			font-size: 1.2rem;
+			font-family: "Segoe-Bold";
+			color: #4f4f4f;
+
+			@media screen and (max-width: 600px) {
+				margin-bottom: 5px;
+			}
+		}
+
+		.datePicker {
+			display: flex;
+			align-items: center;
+
+			.dropdown {
+				position: relative;
+				margin-right: 2.5rem;
+				width: 138px;
+				height: 31px;
+
+				.dropdownBtn {
+					display: flex;
+					align-items: center;
+					padding-left: 11px;
+					width: 100%;
+					height: 100%;
+					background-color: var(--white);
+					border: 1px solid var(--faded);
+					border-radius: 4px;
+					font-size: 12px;
+					text-align: left;
+					color: #7f8fa4;
+
+					&:hover {
+						opacity: 0.7;
+					}
+
+					&::after {
+						content: "";
+						position: absolute;
+						width: 10px;
+						height: 10px;
+						right: 11px;
+						top: 50%;
+						transform: translateY(-50%);
+						background: url("../../../assets/icons/down-chevron-faded.png") no-repeat;
+						background-size: contain;
+					}
+				}
+			}
+
+			.navButtons {
+				display: flex;
+
+				.navBtn {
+					background-color: rgba(248, 247, 247, 0.5);
+					width: 30px;
+					height: 25px;
+					padding: 0.3rem;
+					border: 1px solid #ced0da;
+					border-radius: 3px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: var(--faded);
+
+					&:hover {
+						opacity: 0.7;
+					}
+
+					> ion-icon {
+						color: #cccfd4;
+						width: 18px;
+						height: 18px;
+					}
+
+					&:first-child {
+						margin-right: 0.7rem;
+					}
+				}
+			}
+		}
+	}
+
+	.chartArea {
+		svg {
+			> g {
+				text {
+					font-weight: bold;
+					fill: var(--black);
+				}
+
+				&[class^="raphael-group"] {
+					&:nth-of-type(2) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
