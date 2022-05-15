@@ -24,6 +24,7 @@ body {
 	background: var(--main-bg);
 	color: var(--black);
 	font-family: "Segoe UI", sans-serif;
+	font-size: 0.7rem;
 }
 
 html._fixed,
@@ -74,12 +75,10 @@ select {
 	font-family: inherit;
 	outline: none;
 	color: var(--black);
-	border: 1px solid var(--input-border);
-	border-radius: 4px;
-	background: transparent;
+	border: 0;
 
 	&::placeholder {
-		color: var(--ghost);
+		color: var(--faded);
 	}
 }
 
