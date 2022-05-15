@@ -1,9 +1,8 @@
 .nav {
+	flex: 1;
 	display: flex;
 	align-items: center;
-	justify-content: flex-start;
-	grid-row: 1;
-	grid-column: 2;
+	justify-content: space-between;
 
 	@media screen and (max-width: 1200px) {
 		display: none;
