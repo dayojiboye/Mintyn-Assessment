@@ -1,0 +1,156 @@
+.container {
+	width: var(--full);
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	.table {
+		width: var(--full);
+		border-collapse: collapse;
+
+		tr {
+			border-bottom: 3px solid #eaeef0;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+
+		th,
+		td {
+			text-align: left;
+			font-weight: 400;
+			color: #7f8fa4;
+			white-space: nowrap;
+		}
+
+		th {
+			border: 0;
+			background: #eaeef0;
+			padding: 12px 20px;
+			font-size: 0.9rem;
+
+			&:first-of-type {
+				padding-left: 26px;
+			}
+
+			&:last-child {
+				width: 200px;
+			}
+		}
+
+		td {
+			background: var(--white);
+			padding: 20px;
+			font-size: 0.85rem;
+
+			&:first-of-type {
+				padding-left: 26px;
+				color: #414042;
+				width: 470px;
+			}
+
+			&:nth-child(2) {
+				width: 120px;
+			}
+
+			&:nth-child(3) {
+				width: 200px;
+			}
+
+			&:nth-child(4) {
+				width: 100px;
+			}
+
+			&:nth-child(5) {
+				width: 100px;
+			}
+
+			&:last-of-type {
+				width: 70px;
+			}
+
+			.dropdownContainer {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.dropButton {
+					background-color: transparent;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border: 0;
+
+					&:hover {
+						opacity: 0.7;
+					}
+
+					ion-icon {
+						font-size: 27px;
+						color: #cccfd4;
+					}
+				}
+			}
+
+			.itemType {
+				display: flex;
+				align-items: center;
+				font-size: 0.9rem;
+				color: var(--black);
+				font-family: var(--robotoFont);
+
+				.avatar {
+					width: 40px;
+					height: 40px;
+					background: var(--ghost);
+					border-radius: 50%;
+					border: 1px solid var(--ghost);
+					color: white;
+					font-size: 0.75rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-right: 1.5rem;
+				}
+			}
+
+			.statusContainer {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.statusBtn {
+					width: 120px;
+					height: 33px;
+					background: var(--white);
+					border: 1px solid var(--faded);
+					border-radius: 20px;
+					font-size: 12px;
+					display: flex;
+					align-items: center;
+					padding: 12px;
+					color: #7f8fa4;
+
+					&.reconcilled {
+						color: var(--green);
+					}
+
+					&.pending {
+						color: var(--gold);
+					}
+
+					ion-icon {
+						font-size: 9px;
+						margin-right: 0.3rem;
+					}
+				}
+			}
+		}
+	}
+}

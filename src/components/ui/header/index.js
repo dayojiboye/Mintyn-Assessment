@@ -22,7 +22,7 @@ export default function Header({ open, setOpen, ...props }) {
 						document.documentElement.classList.toggle("_fixed");
 						document.body.classList.toggle("_fixed");
 					}}
-					className={`hamburger hamburger--spin ${open ? "is-active" : ""}`}
+					className={`hamburger hamburger--vortex ${open ? "is-active" : ""}`}
 				>
 					<span className="hamburger-box">
 						<span className="hamburger-inner"></span>
