@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import Table from "./table";
 import Dropdown from "../ui/dropdown";
@@ -9,6 +9,23 @@ import classnames from "classnames/bind";
 
 export default function Payments() {
 	const cx = classnames.bind(styles);
+	const [dropdownOpen, setDropdownOpen] = useState(true);
+
+	const handleDropdown = () => {
+		setDropdownOpen(!dropdownOpen);
+	};
+
+	useEffect(() => {
+		const dismissDropdown = () => {
+			setDropdownOpen(false);
+		};
+
+		document.body.addEventListener("click", dismissDropdown);
+
+		return () => {
+			document.body.removeEventListener("click", dismissDropdown);
+		};
+	}, []);
 
 	return (
 		<div className={styles.payments}>
@@ -30,8 +47,12 @@ export default function Payments() {
 					/>
 				</div>
 				<span className={styles.paymentDropdownHeader}>Show</span>
-				<Dropdown containerStyle={styles.paymentsDropdown} btnText="All">
-					<ul className={styles.dropdownMenu}>
+				<Dropdown
+					containerStyle={styles.paymentsDropdown}
+					btnText="All"
+					onClick={() => handleDropdown()}
+				>
+					<ul className={cx(styles.dropdownMenu, dropdownOpen ? styles.show : "")}>
 						<li>
 							<Button buttonClass={styles.menuItemBtn}>All</Button>
 						</li>
